@@ -1,0 +1,654 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 3px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+}
+
+section h3 {
+    color: #34495e;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Form Styles */
+.egg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+input[type="date"],
+input[type="number"],
+textarea {
+    padding: 0.75rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Color Grid */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.color-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.color-option:hover {
+    border-color: #3498db;
+    background: #f8f9fa;
+}
+
+.color-option input[type="number"] {
+    width: 50px;
+    padding: 0.5rem;
+    border: 1px solid #ecf0f1;
+}
+
+.color-swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.color-swatch.light-brown {
+    background: #D2B48C;
+}
+
+.color-swatch.dark-brown {
+    background: #8B6F47;
+}
+
+.color-swatch.green {
+    background: #90EE90;
+}
+
+.color-swatch.blue {
+    background: #87CEEB;
+}
+
+/* Issues Checkboxes */
+.issues-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.checkbox:hover {
+    background: #f8f9fa;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Buttons */
+.btn-primary {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Calendar */
+.calendar-header {
+    margin-bottom: 1.5rem;
+}
+
+.month-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.month-btn {
+    padding: 0.5rem 1rem;
+    background: #ecf0f1;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.month-btn:hover {
+    background: #bdc3c7;
+}
+
+.month-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.day-header {
+    background: #34495e;
+    color: white;
+    padding: 0.75rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.day {
+    aspect-ratio: 1;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background: #fafbfc;
+    transition: all 0.3s;
+    min-height: 80px;
+}
+
+.day:not(.empty):hover {
+    border-color: #3498db;
+    background: #f0f7ff;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+.day.empty {
+    background: transparent;
+    border: none;
+}
+
+.date {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.eggs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.egg {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.egg.light-brown {
+    color: #D2B48C;
+}
+
+.egg.dark-brown {
+    color: #8B6F47;
+}
+
+.egg.green {
+    color: #90EE90;
+}
+
+.egg.blue {
+    color: #87CEEB;
+}
+
+.egg.damage {
+    opacity: 0.7;
+}
+
+/* Statistics */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card.wide {
+    grid-column: span 2;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.75rem;
+    border-radius: 6px;
+    color: white;
+}
+
+.light-brown-bg {
+    background: #D2B48C;
+}
+
+.dark-brown-bg {
+    background: #8B6F47;
+}
+
+.green-bg {
+    background: #90EE90;
+    color: #333;
+}
+
+.blue-bg {
+    background: #87CEEB;
+    color: #333;
+}
+
+.total-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.issue-bg {
+    background: #e74c3c;
+}
+
+/* Weekly Breakdown */
+.weekly-breakdown {
+    border-top: 2px solid #ecf0f1;
+    padding-top: 1.5rem;
+}
+
+.week {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s;
+}
+
+.week:hover {
+    background: #ecf0f1;
+}
+
+.week-label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.week-count {
+    background: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+
+/* Tablet (768px and up) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .calendar-grid {
+        gap: 0.25rem;
+    }
+
+    .day {
+        min-height: 70px;
+        padding: 0.25rem;
+    }
+
+    .date {
+        font-size: 0.95rem;
+    }
+
+    .egg {
+        font-size: 1rem;
+    }
+
+    .stat-card.wide {
+        grid-column: span 1;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section {
+        padding: 1.25rem;
+    }
+
+    .month-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile (480px and up) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0.75rem;
+    }
+
+    header {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    main {
+        gap: 1.5rem;
+    }
+
+    section {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    section h3 {
+        font-size: 1.05rem;
+        margin-top: 1rem;
+    }
+
+    .egg-form {
+        gap: 1.25rem;
+    }
+
+    .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .color-option {
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .color-swatch {
+        width: 16px;
+        height: 16px;
+    }
+
+    .btn-primary {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .calendar-grid {
+        gap: 0.15rem;
+        margin-bottom: 1rem;
+    }
+
+    .day-header {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.75rem;
+        border-radius: 4px;
+    }
+
+    .day {
+        min-height: 60px;
+        padding: 0.25rem;
+        border: 1px solid #ecf0f1;
+        border-radius: 4px;
+    }
+
+    .date {
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
+
+    .egg {
+        font-size: 0.9rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+        border-radius: 6px;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .week {
+        padding: 0.75rem;
+        margin-bottom: 0.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .week-count {
+        align-self: flex-end;
+    }
+
+    .month-controls {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .month-btn {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .month-title {
+        font-size: 1rem;
+        min-width: auto;
+        order: -1;
+        flex-basis: 100%;
+    }
+
+    .issues-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .checkbox {
+        flex: 0 1 calc(50% - 0.5rem);
+    }
+}
+
+/* Small Mobile (under 360px) */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .calendar-grid {
+        gap: 0.1rem;
+    }
+
+    .day {
+        min-height: 50px;
+    }
+
+    .date {
+        font-size: 0.75rem;
+    }
+
+    .egg {
+        font-size: 0.8rem;
+    }
+
+    .day-header {
+        font-size: 0.65rem;
+        padding: 0.35rem 0.15rem;
+    }
+
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-value {
+        font-size: 1.25rem;
+    }
+}

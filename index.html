@@ -1,1 +1,363 @@
-Eggs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egg Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🥚 Egg Tracker</h1>
+            <p class="subtitle">Track your daily egg collection</p>
+        </header>
+
+        <main>
+            <!-- Log New Eggs Section -->
+            <section class="log-section">
+                <h2>Log New Eggs</h2>
+                <form class="egg-form" method="POST">
+                    <div class="form-group">
+                        <label for="egg-date">Date:</label>
+                        <input type="date" id="egg-date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Egg Colors:</label>
+                        <div class="color-grid">
+                            <label class="color-option">
+                                <input type="number" name="light-brown" min="0" value="0">
+                                <span class="color-swatch light-brown"></span>
+                                Light Brown
+                            </label>
+                            <label class="color-option">
+                                <input type="number" name="dark-brown" min="0" value="0">
+                                <span class="color-swatch dark-brown"></span>
+                                Dark Brown
+                            </label>
+                            <label class="color-option">
+                                <input type="number" name="green" min="0" value="0">
+                                <span class="color-swatch green"></span>
+                                Green
+                            </label>
+                            <label class="color-option">
+                                <input type="number" name="blue" min="0" value="0">
+                                <span class="color-swatch blue"></span>
+                                Blue
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Issues:</label>
+                        <div class="issues-group">
+                            <label class="checkbox">
+                                <input type="checkbox" name="crack">
+                                Cracked
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="soft-shell">
+                                Soft Shell
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes:</label>
+                        <textarea id="notes" name="notes" rows="2" placeholder="Any additional notes..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Log Eggs</button>
+                </form>
+            </section>
+
+            <!-- Calendar View Section -->
+            <section class="calendar-section">
+                <h2>April 2026 - Eggs Collected</h2>
+                
+                <div class="calendar-header">
+                    <div class="month-controls">
+                        <button class="month-btn">← Previous</button>
+                        <span class="month-title">April 2026</span>
+                        <button class="month-btn">Next →</button>
+                    </div>
+                </div>
+
+                <div class="calendar-grid">
+                    <div class="day-header">Sun</div>
+                    <div class="day-header">Mon</div>
+                    <div class="day-header">Tue</div>
+                    <div class="day-header">Wed</div>
+                    <div class="day-header">Thu</div>
+                    <div class="day-header">Fri</div>
+                    <div class="day-header">Sat</div>
+
+                    <!-- Row 1 -->
+                    <div class="day empty"></div>
+                    <div class="day">
+                        <div class="date">1</div>
+                        <div class="eggs">
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">2</div>
+                        <div class="eggs">
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                            <span class="egg green" title="Green">●</span>
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">3</div>
+                        <div class="eggs">
+                            <span class="egg blue" title="Blue">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">4</div>
+                        <div class="eggs">
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">5</div>
+                        <div class="eggs">
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                            <span class="egg dark-brown damage" title="Dark Brown - Cracked">●⚠</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">6</div>
+                        <div class="eggs">
+                            <span class="egg green" title="Green">●</span>
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="day">
+                        <div class="date">7</div>
+                        <div class="eggs"></div>
+                    </div>
+                    <div class="day">
+                        <div class="date">8</div>
+                        <div class="eggs">
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                            <span class="egg blue" title="Blue">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">9</div>
+                        <div class="eggs">
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                            <span class="egg green" title="Green">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">10</div>
+                        <div class="eggs">
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">11</div>
+                        <div class="eggs">
+                            <span class="egg blue" title="Blue">●</span>
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">12</div>
+                        <div class="eggs">
+                            <span class="egg green" title="Green">●</span>
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">13</div>
+                        <div class="eggs">
+                            <span class="egg light-brown damage" title="Light Brown - Soft Shell">●⚠</span>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="day">
+                        <div class="date">14</div>
+                        <div class="eggs">
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">15</div>
+                        <div class="eggs">
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                            <span class="egg green" title="Green">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">16</div>
+                        <div class="eggs">
+                            <span class="egg blue" title="Blue">●</span>
+                            <span class="egg blue" title="Blue">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">17</div>
+                        <div class="eggs">
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">18</div>
+                        <div class="eggs">
+                            <span class="egg green" title="Green">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">19</div>
+                        <div class="eggs">
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">20</div>
+                        <div class="eggs"></div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="day">
+                        <div class="date">21</div>
+                        <div class="eggs">
+                            <span class="egg blue" title="Blue">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">22</div>
+                        <div class="eggs">
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">23</div>
+                        <div class="eggs">
+                            <span class="egg green" title="Green">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">24</div>
+                        <div class="eggs">
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">25</div>
+                        <div class="eggs">
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                            <span class="egg blue" title="Blue">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">26</div>
+                        <div class="eggs">
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                            <span class="egg green" title="Green">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">27</div>
+                        <div class="eggs">
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                        </div>
+                    </div>
+
+                    <!-- Row 5 -->
+                    <div class="day">
+                        <div class="date">28</div>
+                        <div class="eggs">
+                            <span class="egg blue" title="Blue">●</span>
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">29</div>
+                        <div class="eggs">
+                            <span class="egg dark-brown" title="Dark Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">30</div>
+                        <div class="eggs">
+                            <span class="egg green" title="Green">●</span>
+                            <span class="egg light-brown" title="Light Brown">●</span>
+                        </div>
+                    </div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="stats-section">
+                <h2>Monthly Summary</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Light Brown</div>
+                        <div class="stat-value light-brown-bg">18</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Dark Brown</div>
+                        <div class="stat-value dark-brown-bg">16</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Green</div>
+                        <div class="stat-value green-bg">11</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Blue</div>
+                        <div class="stat-value blue-bg">8</div>
+                    </div>
+                    <div class="stat-card wide">
+                        <div class="stat-label">Total Eggs</div>
+                        <div class="stat-value total-bg">53</div>
+                    </div>
+                    <div class="stat-card wide">
+                        <div class="stat-label">Days with Issues</div>
+                        <div class="stat-value issue-bg">2</div>
+                    </div>
+                </div>
+
+                <div class="weekly-breakdown">
+                    <h3>Weekly Breakdown</h3>
+                    <div class="week">
+                        <span class="week-label">Week 1 (Apr 1-6)</span>
+                        <span class="week-count">8 eggs</span>
+                    </div>
+                    <div class="week">
+                        <span class="week-label">Week 2 (Apr 7-13)</span>
+                        <span class="week-count">11 eggs</span>
+                    </div>
+                    <div class="week">
+                        <span class="week-label">Week 3 (Apr 14-20)</span>
+                        <span class="week-count">10 eggs</span>
+                    </div>
+                    <div class="week">
+                        <span class="week-label">Week 4 (Apr 21-30)</span>
+                        <span class="week-count">14 eggs</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
