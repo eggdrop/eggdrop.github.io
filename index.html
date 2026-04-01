@@ -3,63 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egg Tracker</title>
+    <title>Egg Drop</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐔</text></svg>">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🥚 Egg Tracker</h1>
-            <p class="subtitle">Track your daily egg collection</p>
+            <h1>🐔 Egg Drop</h1>
         </header>
 
         <main>
             <!-- Log New Eggs Section -->
             <section class="log-section">
-                <h2>Log New Eggs</h2>
                 <form class="egg-form" method="POST">
-                    <div class="form-group">
-                        <label for="egg-date">Date:</label>
-                        <input type="date" id="egg-date" name="date" required>
-                    </div>
 
                     <div class="form-group">
-                        <label>Egg Colors:</label>
                         <div class="color-grid">
-                            <label class="color-option">
-                                <input type="number" name="light-brown" min="0" value="0">
-                                <span class="color-swatch light-brown"></span>
-                                Light Brown
-                            </label>
-                            <label class="color-option">
-                                <input type="number" name="dark-brown" min="0" value="0">
-                                <span class="color-swatch dark-brown"></span>
-                                Dark Brown
-                            </label>
-                            <label class="color-option">
-                                <input type="number" name="green" min="0" value="0">
-                                <span class="color-swatch green"></span>
-                                Green
-                            </label>
-                            <label class="color-option">
-                                <input type="number" name="blue" min="0" value="0">
-                                <span class="color-swatch blue"></span>
-                                Blue
-                            </label>
-                        </div>
-                    </div>
+                            <!-- Light Brown -->
+                            <div class="color-option light-brown" data-color="light-brown">
+                                <div class="color-name">Light Brown</div>
+                                <div class="quantity-boxes">
+                                    <input type="radio" name="light-brown-qty" value="1" id="lb-qty-1">
+                                    <label for="lb-qty-1">1</label>
+                                    <input type="radio" name="light-brown-qty" value="2" id="lb-qty-2">
+                                    <label for="lb-qty-2">2</label>
+                                    <input type="radio" name="light-brown-qty" value="3" id="lb-qty-3">
+                                    <label for="lb-qty-3">3</label>
+                                    <input type="radio" name="light-brown-qty" value="4" id="lb-qty-4">
+                                    <label for="lb-qty-4">4</label>
+                                    <input type="radio" name="light-brown-qty" value="5" id="lb-qty-5">
+                                    <label for="lb-qty-5">5</label>
+                                </div>
+                                <div class="egg-issues" style="display: none;">
+                                    <div class="issue-label">Mark any issues:</div>
+                                    <div class="egg-items" id="lb-eggs"></div>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label>Issues:</label>
-                        <div class="issues-group">
-                            <label class="checkbox">
-                                <input type="checkbox" name="crack">
-                                Cracked
-                            </label>
-                            <label class="checkbox">
-                                <input type="checkbox" name="soft-shell">
-                                Soft Shell
-                            </label>
+                            <!-- Dark Brown -->
+                            <div class="color-option dark-brown" data-color="dark-brown">
+                                <div class="color-name">Dark Brown</div>
+                                <div class="quantity-boxes">
+                                    <input type="radio" name="dark-brown-qty" value="1" id="db-qty-1">
+                                    <label for="db-qty-1">1</label>
+                                    <input type="radio" name="dark-brown-qty" value="2" id="db-qty-2">
+                                    <label for="db-qty-2">2</label>
+                                    <input type="radio" name="dark-brown-qty" value="3" id="db-qty-3">
+                                    <label for="db-qty-3">3</label>
+                                    <input type="radio" name="dark-brown-qty" value="4" id="db-qty-4">
+                                    <label for="db-qty-4">4</label>
+                                    <input type="radio" name="dark-brown-qty" value="5" id="db-qty-5">
+                                    <label for="db-qty-5">5</label>
+                                </div>
+                                <div class="egg-issues" style="display: none;">
+                                    <div class="issue-label">Mark any issues:</div>
+                                    <div class="egg-items" id="db-eggs"></div>
+                                </div>
+                            </div>
+
+                            <!-- Green -->
+                            <div class="color-option green" data-color="green">
+                                <div class="color-name">Green</div>
+                                <div class="quantity-boxes">
+                                    <input type="radio" name="green-qty" value="1" id="g-qty-1">
+                                    <label for="g-qty-1">1</label>
+                                    <input type="radio" name="green-qty" value="2" id="g-qty-2">
+                                    <label for="g-qty-2">2</label>
+                                    <input type="radio" name="green-qty" value="3" id="g-qty-3">
+                                    <label for="g-qty-3">3</label>
+                                    <input type="radio" name="green-qty" value="4" id="g-qty-4">
+                                    <label for="g-qty-4">4</label>
+                                    <input type="radio" name="green-qty" value="5" id="g-qty-5">
+                                    <label for="g-qty-5">5</label>
+                                </div>
+                                <div class="egg-issues" style="display: none;">
+                                    <div class="issue-label">Mark any issues:</div>
+                                    <div class="egg-items" id="g-eggs"></div>
+                                </div>
+                            </div>
+
+                            <!-- Blue -->
+                            <div class="color-option blue" data-color="blue">
+                                <div class="color-name">Blue</div>
+                                <div class="quantity-boxes">
+                                    <input type="radio" name="blue-qty" value="1" id="b-qty-1">
+                                    <label for="b-qty-1">1</label>
+                                    <input type="radio" name="blue-qty" value="2" id="b-qty-2">
+                                    <label for="b-qty-2">2</label>
+                                    <input type="radio" name="blue-qty" value="3" id="b-qty-3">
+                                    <label for="b-qty-3">3</label>
+                                    <input type="radio" name="blue-qty" value="4" id="b-qty-4">
+                                    <label for="b-qty-4">4</label>
+                                    <input type="radio" name="blue-qty" value="5" id="b-qty-5">
+                                    <label for="b-qty-5">5</label>
+                                </div>
+                                <div class="egg-issues" style="display: none;">
+                                    <div class="issue-label">Mark any issues:</div>
+                                    <div class="egg-items" id="b-eggs"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -68,296 +111,72 @@
                         <textarea id="notes" name="notes" rows="2" placeholder="Any additional notes..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn-primary">Log Eggs</button>
+                    <button type="submit" class="btn-primary">Record Eggs</button>
                 </form>
-            </section>
-
-            <!-- Calendar View Section -->
-            <section class="calendar-section">
-                <h2>April 2026 - Eggs Collected</h2>
-                
-                <div class="calendar-header">
-                    <div class="month-controls">
-                        <button class="month-btn">← Previous</button>
-                        <span class="month-title">April 2026</span>
-                        <button class="month-btn">Next →</button>
-                    </div>
-                </div>
-
-                <div class="calendar-grid">
-                    <div class="day-header">Sun</div>
-                    <div class="day-header">Mon</div>
-                    <div class="day-header">Tue</div>
-                    <div class="day-header">Wed</div>
-                    <div class="day-header">Thu</div>
-                    <div class="day-header">Fri</div>
-                    <div class="day-header">Sat</div>
-
-                    <!-- Row 1 -->
-                    <div class="day empty"></div>
-                    <div class="day">
-                        <div class="date">1</div>
-                        <div class="eggs">
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">2</div>
-                        <div class="eggs">
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                            <span class="egg green" title="Green">●</span>
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">3</div>
-                        <div class="eggs">
-                            <span class="egg blue" title="Blue">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">4</div>
-                        <div class="eggs">
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">5</div>
-                        <div class="eggs">
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                            <span class="egg dark-brown damage" title="Dark Brown - Cracked">●⚠</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">6</div>
-                        <div class="eggs">
-                            <span class="egg green" title="Green">●</span>
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                        </div>
-                    </div>
-
-                    <!-- Row 2 -->
-                    <div class="day">
-                        <div class="date">7</div>
-                        <div class="eggs"></div>
-                    </div>
-                    <div class="day">
-                        <div class="date">8</div>
-                        <div class="eggs">
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                            <span class="egg blue" title="Blue">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">9</div>
-                        <div class="eggs">
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                            <span class="egg green" title="Green">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">10</div>
-                        <div class="eggs">
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">11</div>
-                        <div class="eggs">
-                            <span class="egg blue" title="Blue">●</span>
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">12</div>
-                        <div class="eggs">
-                            <span class="egg green" title="Green">●</span>
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">13</div>
-                        <div class="eggs">
-                            <span class="egg light-brown damage" title="Light Brown - Soft Shell">●⚠</span>
-                        </div>
-                    </div>
-
-                    <!-- Row 3 -->
-                    <div class="day">
-                        <div class="date">14</div>
-                        <div class="eggs">
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">15</div>
-                        <div class="eggs">
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                            <span class="egg green" title="Green">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">16</div>
-                        <div class="eggs">
-                            <span class="egg blue" title="Blue">●</span>
-                            <span class="egg blue" title="Blue">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">17</div>
-                        <div class="eggs">
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">18</div>
-                        <div class="eggs">
-                            <span class="egg green" title="Green">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">19</div>
-                        <div class="eggs">
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">20</div>
-                        <div class="eggs"></div>
-                    </div>
-
-                    <!-- Row 4 -->
-                    <div class="day">
-                        <div class="date">21</div>
-                        <div class="eggs">
-                            <span class="egg blue" title="Blue">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">22</div>
-                        <div class="eggs">
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">23</div>
-                        <div class="eggs">
-                            <span class="egg green" title="Green">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">24</div>
-                        <div class="eggs">
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">25</div>
-                        <div class="eggs">
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                            <span class="egg blue" title="Blue">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">26</div>
-                        <div class="eggs">
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                            <span class="egg green" title="Green">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">27</div>
-                        <div class="eggs">
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                        </div>
-                    </div>
-
-                    <!-- Row 5 -->
-                    <div class="day">
-                        <div class="date">28</div>
-                        <div class="eggs">
-                            <span class="egg blue" title="Blue">●</span>
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">29</div>
-                        <div class="eggs">
-                            <span class="egg dark-brown" title="Dark Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">30</div>
-                        <div class="eggs">
-                            <span class="egg green" title="Green">●</span>
-                            <span class="egg light-brown" title="Light Brown">●</span>
-                        </div>
-                    </div>
-                    <div class="day empty"></div>
-                    <div class="day empty"></div>
-                    <div class="day empty"></div>
-                    <div class="day empty"></div>
-                </div>
-            </section>
-
-            <!-- Statistics Section -->
-            <section class="stats-section">
-                <h2>Monthly Summary</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-label">Light Brown</div>
-                        <div class="stat-value light-brown-bg">18</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Dark Brown</div>
-                        <div class="stat-value dark-brown-bg">16</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Green</div>
-                        <div class="stat-value green-bg">11</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-label">Blue</div>
-                        <div class="stat-value blue-bg">8</div>
-                    </div>
-                    <div class="stat-card wide">
-                        <div class="stat-label">Total Eggs</div>
-                        <div class="stat-value total-bg">53</div>
-                    </div>
-                    <div class="stat-card wide">
-                        <div class="stat-label">Days with Issues</div>
-                        <div class="stat-value issue-bg">2</div>
-                    </div>
-                </div>
-
-                <div class="weekly-breakdown">
-                    <h3>Weekly Breakdown</h3>
-                    <div class="week">
-                        <span class="week-label">Week 1 (Apr 1-6)</span>
-                        <span class="week-count">8 eggs</span>
-                    </div>
-                    <div class="week">
-                        <span class="week-label">Week 2 (Apr 7-13)</span>
-                        <span class="week-count">11 eggs</span>
-                    </div>
-                    <div class="week">
-                        <span class="week-label">Week 3 (Apr 14-20)</span>
-                        <span class="week-count">10 eggs</span>
-                    </div>
-                    <div class="week">
-                        <span class="week-label">Week 4 (Apr 21-30)</span>
-                        <span class="week-count">14 eggs</span>
-                    </div>
-                </div>
             </section>
         </main>
     </div>
-</body>
-</html>
+
+    <script>
+        document.querySelectorAll('.color-option').forEach(colorOption => {
+            const color = colorOption.dataset.color;
+            const quantityInputs = colorOption.querySelectorAll('input[type="radio"]');
+            const eggIssuesSection = colorOption.querySelector('.egg-issues');
+            const eggItemsContainer = colorOption.querySelector('.egg-items');
+
+            quantityInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    const quantity = parseInt(this.value);
+                    renderEggs(quantity, color);
+                    eggIssuesSection.style.display = 'block';
+                });
+            });
+
+            function renderEggs(quantity, color) {
+                eggItemsContainer.innerHTML = '';
+                
+                for (let i = 1; i <= quantity; i++) {
+                    const eggItem = document.createElement('div');
+                    eggItem.className = 'egg-item';
+                    eggItem.dataset.eggNum = i;
+                    
+                    const eggNumber = document.createElement('div');
+                    eggNumber.className = 'egg-number';
+                    eggNumber.textContent = i;
+                    eggNumber.addEventListener('click', function() {
+                        this.classList.toggle('selected');
+                    });
+                    
+                    const issuesRow = document.createElement('div');
+                    issuesRow.className = 'egg-issues-row';
+                    
+                    const crackedToggle = document.createElement('div');
+                    crackedToggle.className = 'egg-issue-toggle';
+                    crackedToggle.textContent = 'CS';
+                    crackedToggle.title = 'Cracked';
+                    crackedToggle.dataset.issue = 'crack';
+                    crackedToggle.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        this.classList.toggle('active');
+                    });
+                    
+                    const softToggle = document.createElement('div');
+                    softToggle.className = 'egg-issue-toggle';
+                    softToggle.textContent = 'SS';
+                    softToggle.title = 'Soft Shell';
+                    softToggle.dataset.issue = 'soft';
+                    softToggle.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        this.classList.toggle('active');
+                    });
+                    
+                    issuesRow.appendChild(crackedToggle);
+                    issuesRow.appendChild(softToggle);
+                    
+                    eggItem.appendChild(eggNumber);
+                    eggItem.appendChild(issuesRow);
+                    eggItemsContainer.appendChild(eggItem);
+                }
+            }
+        });
+    </script>
